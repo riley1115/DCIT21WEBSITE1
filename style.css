@@ -235,7 +235,8 @@ nav a {
 }
 
 nav a:hover {
-  color: yellow; /* Hover color for better visibility */
+  color: rgb(252, 252, 105); /* Hover color for better visibility */
+  font-size: 20px;
 }
 
 nav .animation {
@@ -253,32 +254,51 @@ nav .animation {
 /* Home link hover */
 nav a:nth-child(1):hover ~ .animation {
  
-  left: 50px;
+  left: 10px;
 }
 
 /* About link hover */
 nav a:nth-child(2):hover ~ .animation {
   width: 110px;
-  left: 295px; /* Adjusted positions */
+  left: 150px; /* Adjusted positions */
 }
 
 /* Services link hover */
 nav a:nth-child(3):hover ~ .animation {
   width: 110px;
-  left: 550px;
+  left: 300px;
 }
 
 /* Portfolio link hover */
 nav a:nth-child(4):hover ~ .animation {
   width: 120px;
-  left: 820px;
+  left: 460px;
 }
 
-/* Contact link hover */
+/* Onitsuka hover */
 nav a:nth-child(5):hover ~ .animation {
   width: 120px;
-  left: 1090px;
+  left: 630px;
 }
+
+/* New balance hover */
+nav a:nth-child(6):hover ~ .animation {
+    width: 120px;
+    left: 800px;
+  }
+  
+  nav a:nth-child(7):hover ~ .animation {
+    width: 120px;
+    left: 960px;
+  }
+  
+  nav a:nth-child(8):hover ~ .animation {
+    width: 120px;
+    left: 1103px;
+  }
+  
+  
+  
 
 @media (max-width: 600px) {
     .polaroid1, .polaroid2, .polaroid3, .polaroid4, .polaroid5, .polaroid6 {
