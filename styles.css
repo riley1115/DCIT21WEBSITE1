@@ -1,0 +1,169 @@
+
+
+*{
+    font-family: "Noto Sans Coptic", serif;
+      font-weight: 400;
+      font-style: normal;
+      font-weight: bolder;
+}
+
+
+nav {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1400px;
+  height: 50px;
+  background: black;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around; /* Distribute links evenly */
+  align-items: center;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+}
+img{
+    width: 400px;
+    display: flexbox;
+    position: relative;
+    left: 400px;
+    bottom: 100px;
+}
+nav a {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: white; /* Updated to white for better contrast */
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: rgb(252, 252, 105); /* Hover color for better visibility */
+  font-size: 20px;
+}
+
+nav .animation {
+  position: absolute;
+  height: 5px;
+  top: 45px; /* Align animation bar below links */
+  z-index: 0;
+  background: white;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: 110px; /* Default width */
+  left: 0; /* Default position */
+}
+
+/* Home link hover */
+nav a:nth-child(1):hover ~ .animation {
+ 
+  left: 10px;
+}
+
+/* About link hover */
+nav a:nth-child(2):hover ~ .animation {
+  width: 110px;
+  left: 150px; /* Adjusted positions */
+}
+
+/* Services link hover */
+nav a:nth-child(3):hover ~ .animation {
+  width: 110px;
+  left: 300px;
+}
+
+/* Portfolio link hover */
+nav a:nth-child(4):hover ~ .animation {
+  width: 120px;
+  left: 460px;
+}
+
+/* Onitsuka hover */
+nav a:nth-child(5):hover ~ .animation {
+  width: 120px;
+  left: 630px;
+}
+
+/* New balance hover */
+nav a:nth-child(6):hover ~ .animation {
+    width: 120px;
+    left: 800px;
+  }
+  
+  nav a:nth-child(7):hover ~ .animation {
+    width: 120px;
+    left: 960px;
+  }
+  
+  nav a:nth-child(8):hover ~ .animation {
+    width: 120px;
+    left: 1103px;
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      height: 70px; /* Increase height for easier navigation */
+      flex-direction: column; /* Stack links vertically */
+      padding: 10px;
+    }
+  
+    nav a {
+      font-size: 14px; /* Slightly smaller font size for mobile */
+      padding: 10px 0; /* Add vertical padding for touch targets */
+    }
+  
+    nav .animation {
+      display: none; /* Hide animation bar for simplicity on mobile */
+    }
+  
+    img {
+      width: 90%; /* Ensure the image takes most of the screen width */
+    }
+  }
+  
+  /* Tablets and Smaller Laptops (600px to 1024px) */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    nav {
+      height: 60px;
+      justify-content: space-between; /* Spread links evenly */
+      padding: 0 10px;
+    }
+  
+    nav a {
+      font-size: 16px;
+      padding: 0 10px;
+    }
+  
+    nav .animation {
+      height: 4px;
+    }
+  
+    img {
+      width: 80%;
+    }
+  }
+  
+  /* Large Screens (1024px and above) */
+  @media (min-width: 1000px) {
+    nav {
+      height: 60px;
+      justify-content: space-around;
+    }
+  
+    nav a {
+      font-size: 15px;
+      padding: 0 20px;
+    }
+  
+    nav .animation {
+      display: block;
+      width: 110px; /* Default width */
+    }
+  
+    img {
+      width: 60%; /* Adjust for better placement on larger screens */
+    }
+  }
