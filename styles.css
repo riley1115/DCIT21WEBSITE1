@@ -1,13 +1,126 @@
-
-
-*{
-    font-family: "Noto Sans Coptic", serif;
-      font-weight: 400;
-      font-style: normal;
-      font-weight: bolder;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
 
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 14px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 5px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns for thumbnails */
+.column {
+  float: left;
+  width: 100%; /* Default for small screens */
+}
+
+.column img {
+  width: 100%; /* Make thumbnails responsive */
+  max-height: 80px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+/* Add a transparency effect for thumbnail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+/* Responsive Design Adjustments */
+@media screen and (min-width: 768px) {
+  .column {
+    width: 25%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .column {
+    width: 16.66%;
+  }
+
+  .prev,
+  .next {
+    font-size: 24px;
+  }
+}
 nav {
   position: relative;
   margin: 0 auto;
@@ -20,15 +133,9 @@ nav {
   justify-content: space-around; /* Distribute links evenly */
   align-items: center;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
-}
-img{
-    width: 400px;
-    display: flexbox;
-    position: relative;
-    left: 400px;
-    bottom: 100px;
-}
-nav a {
+  }
+  
+  nav a {
   font-size: 15px;
   text-transform: uppercase;
   color: white; /* Updated to white for better contrast */
@@ -38,14 +145,13 @@ nav a {
   padding: 0 20px;
   text-align: center;
   transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: rgb(252, 252, 105); /* Hover color for better visibility */
-  font-size: 20px;
-}
-
-nav .animation {
+  }
+  
+  nav a:hover {
+  color: yellow; /* Hover color for better visibility */
+  }
+  
+  nav .animation {
   position: absolute;
   height: 5px;
   top: 45px; /* Align animation bar below links */
@@ -55,115 +161,36 @@ nav .animation {
   transition: all 0.3s ease;
   width: 110px; /* Default width */
   left: 0; /* Default position */
-}
-
-/* Home link hover */
-nav a:nth-child(1):hover ~ .animation {
- 
-  left: 10px;
-}
-
-/* About link hover */
-nav a:nth-child(2):hover ~ .animation {
+  }
+  
+  /* Home link hover */
+  nav a:nth-child(1):hover ~ .animation {
+  
+  left: -5px;
+  }
+  
+  /* About link hover */
+  nav a:nth-child(2):hover ~ .animation {
   width: 110px;
-  left: 150px; /* Adjusted positions */
-}
-
-/* Services link hover */
-nav a:nth-child(3):hover ~ .animation {
+  left: 20px; /* Adjusted positions */
+  }
+  
+  /* Services link hover */
+  nav a:nth-child(3):hover ~ .animation {
   width: 110px;
-  left: 300px;
-}
-
-/* Portfolio link hover */
-nav a:nth-child(4):hover ~ .animation {
+  left: 550px;
+  }
+  
+  /* Portfolio link hover */
+  nav a:nth-child(4):hover ~ .animation {
   width: 120px;
-  left: 460px;
-}
-
-/* Onitsuka hover */
-nav a:nth-child(5):hover ~ .animation {
+  left: 820px;
+  }
+  
+  /* Contact link hover */
+  nav a:nth-child(5):hover ~ .animation {
   width: 120px;
-  left: 630px;
-}
-
-/* New balance hover */
-nav a:nth-child(6):hover ~ .animation {
-    width: 120px;
-    left: 800px;
+  left: 1090px;
   }
   
-  nav a:nth-child(7):hover ~ .animation {
-    width: 120px;
-    left: 960px;
-  }
   
-  nav a:nth-child(8):hover ~ .animation {
-    width: 120px;
-    left: 1103px;
-  }
-
-  @media (max-width: 600px) {
-    nav {
-      height: 70px; /* Increase height for easier navigation */
-      flex-direction: column; /* Stack links vertically */
-      padding: 10px;
-    }
-  
-    nav a {
-      font-size: 14px; /* Slightly smaller font size for mobile */
-      padding: 10px 0; /* Add vertical padding for touch targets */
-    }
-  
-    nav .animation {
-      display: none; /* Hide animation bar for simplicity on mobile */
-    }
-  
-    img {
-      width: 90%; /* Ensure the image takes most of the screen width */
-    }
-  }
-  
-  /* Tablets and Smaller Laptops (600px to 1024px) */
-  @media (min-width: 601px) and (max-width: 1024px) {
-    nav {
-      height: 60px;
-      justify-content: space-between; /* Spread links evenly */
-      padding: 0 10px;
-    }
-  
-    nav a {
-      font-size: 16px;
-      padding: 0 10px;
-    }
-  
-    nav .animation {
-      height: 4px;
-    }
-  
-    img {
-      width: 80%;
-    }
-  }
-  
-  /* Large Screens (1024px and above) */
-  @media (min-width: 1000px) {
-    nav {
-      height: 60px;
-      justify-content: space-around;
-    }
-  
-    nav a {
-      font-size: 15px;
-      padding: 0 20px;
-    }
-  
-    nav .animation {
-      display: block;
-      width: 110px; /* Default width */
-    }
-  
-    img {
-      width: 60%; /* Adjust for better placement on larger screens */
-    }
-  }
